@@ -1,47 +1,54 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class = "page" style = "background: #fff">
-    <div class = "page-main">
-      <div class = "header py-4", style="height: 64px;">
-        <header class="header" style = "background: white;">
-          <a href='/' style="text-align: left;">
-            <img src="/static/images/transparent.svg" class="header-brand-img mr-2" alt="Responsly Logo", style="padding: 15px; height:100%;">
-          </a>
-        </header>
-    </div>
+<div class="page" style="background: #fff">
+    <div class="page-main">
 
-        <div class = "container mt-5">
-          <div id="message_container">
-            <div id="message_holder" class = "message_holder">
-              <section>
-                <div class="from-them">
-                    <p>Hi! While I'm not a Therapist, I'm an AI that talks and responds like one. </p>
-                  </div>
-                  <div class="clear"></div>
-                  <div class="from-them">
-                      <p> What's on your mind? </p>
-                    </div>
-                    <div class="clear"></div>
-                </section>
-              <div class="input-group" style = "position: absolute; bottom: 0px; padding: 3vh; padding-left: 12vh; text-align: center;">
-                <input id = "myMessage" type="text" class="form-control" style="font-size: .875em;"/>
-                <button id="sendbutton" class = "btn btn-primary">Send</button>
+      <!-- iMessage-style header -->
+      <header class="imessage-header">
+        <a href="/" class="back-btn">&#8249;</a>
+        <div class="contact-center">
+          <div class="contact-avatar">AI</div>
+          <div class="contact-name">AI Therapist</div>
+          <div class="contact-status">online</div>
+        </div>
+        <div class="header-actions">
+          <span class="header-action-btn" title="Info">&#9432;</span>
+        </div>
+      </header>
+
+      <div class="container mt-5">
+        <div id="message_container">
+          <div id="message_holder" class="message_holder">
+            <section>
+              <div class="from-them">
+                <p>Hi! While I'm not a Therapist, I'm an AI that talks and responds like one.</p>
               </div>
+              <div class="clear"></div>
+              <div class="from-them">
+                <p>What's on your mind?</p>
+              </div>
+              <div class="clear"></div>
+            </section>
 
+            <!-- iMessage-style input bar -->
+            <div class="imessage-input-bar">
+              <input id="myMessage" type="text" placeholder="iMessage" />
+              <button id="sendbutton" class="btn btn-primary">&#8593;</button>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class = "container" style = "display: block; text-align:center;"> 
+      <div class="container" style="display: block; text-align:center;">
         <form action="/recommendations">
-            <input id ='go_to_recommendations' class="btn btn-primary" value="Generate Recommendations" type="submit"/>
+          <input id="go_to_recommendations" class="btn btn-primary" value="Generate Recommendations" type="submit"/>
         </form>
-      </div> 
-      </div>
       </div>
 
-      <script type="text/javascript" src="/static/js/chat.js"></script>
+    </div>
+</div>
 
+<script type="text/javascript" src="/static/js/chat.js"></script>
 
 {% endblock content %}

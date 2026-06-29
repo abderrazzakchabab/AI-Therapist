@@ -15,6 +15,82 @@ filter: invert(100%);
     z-index:1000;
 }
 
+/* iMessage-style chat header */
+.imessage-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 64px;
+    box-sizing: border-box;
+}
+
+.imessage-header .back-btn {
+    color: #0B93F6;
+    font-size: 26px;
+    text-decoration: none;
+    line-height: 1;
+    padding: 0 8px;
+    font-weight: 300;
+}
+
+.imessage-header .back-btn:hover {
+    text-decoration: none;
+    color: #007AFF;
+}
+
+.imessage-header .contact-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.imessage-header .contact-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #8E8E93;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.imessage-header .contact-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    line-height: 1;
+}
+
+.imessage-header .contact-status {
+    font-size: 11px;
+    color: #8E8E93;
+    line-height: 1;
+}
+
+.imessage-header .header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.imessage-header .header-action-btn {
+    color: #0B93F6;
+    font-size: 22px;
+    text-decoration: none;
+    padding: 4px;
+}
+
 #recommendation_holder {
     overflow-y:scroll; 
     height: 60vh; 
@@ -40,8 +116,8 @@ filter: invert(100%);
 }
 
 #back_to_chat {
-    background:#A653C2;
-    border-color: #A653C2;
+    background:#0B93F6;
+    border-color: #0B93F6;
     box-shadow: 2px 2px #888888;
     margin: 5vh;
     height: 7vh;
@@ -83,9 +159,9 @@ filter: invert(100%);
     margin-right: 3%;
     padding: 1px 15px;
     color: white;
-    overflow-wrap: break-word; 
+    overflow-wrap: break-word;
     word-wrap: break-word;
-    background: #A653C2;
+    background: #0B93F6;
     font-size: .875em;
     border-radius: 25px;
     float: right;
@@ -153,14 +229,24 @@ filter: invert(100%);
   }
 
 #sendbutton {
-    background:#A653C2;
-    border-color: #A653C2;
-    box-shadow: 2px 2px #888888;
+    background: #0B93F6;
+    border-color: #0B93F6;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
+    box-shadow: none;
+    flex-shrink: 0;
   }
 
 #go_to_recommendations {
-    background:#A653C2;
-    border-color: #A653C2;
+    background:#0B93F6;
+    border-color: #0B93F6;
     box-shadow: 2px 2px #888888;
     margin: 5vh;
     height: 10vh;
@@ -169,8 +255,40 @@ filter: invert(100%);
 
 #call_recommendations {
     height: 10vh;
-    width: 40vh; 
-    background: #4A3094; 
-    border-color: #4A3094; 
+    width: 40vh;
+    background: #0B93F6;
+    border-color: #0B93F6;
     box-shadow: 2px 2px #888888;
+}
+
+/* iMessage-style input bar */
+.imessage-input-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 12px;
+    background: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.imessage-input-bar #myMessage {
+    border-radius: 18px;
+    border: 1px solid #c7c7cc;
+    padding: 6px 14px;
+    font-size: 0.9em;
+    flex: 1;
+    background: #fff;
+    outline: none;
+    box-shadow: none;
+}
+
+.imessage-input-bar #myMessage:focus {
+    border-color: #0B93F6;
+    box-shadow: none;
 }
